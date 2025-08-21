@@ -1,0 +1,7 @@
+<!-- <p>applied-jobs works!</p> -->
+
+<div class="applied-jobs">
+  <h2>Applied Jobs</h2>
+  <app-job-item *ngFor="let job of appliedJobs" [job]="job" [showApplyButton]="false"
+    (cancel)="onCancel($event)"></app-job-item>
+</div>

@@ -1,0 +1,32 @@
+.job-item {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 10px;
+
+    .job-summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            background-color: #3f51b5;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #303f9f;
+            }
+        }
+    }
+
+    .job-details {
+        margin-top: 8px;
+        font-size: 0.9rem;
+        color: #444;
+    }
+}

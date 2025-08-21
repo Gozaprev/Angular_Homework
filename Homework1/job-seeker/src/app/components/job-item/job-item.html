@@ -1,0 +1,52 @@
+<!-- <p>job-item works!</p> -->
+
+
+<!-- <div class="job-item">
+    <div class="job-summary" (click)="toggleDetails()" tabindex="0" role="button" [attr.aria-pressed]="expanded">
+        <div>
+            <h3>{{job.position}} - {{job.company}}</h3>
+            <p>Expires: {{job.expires | date}}</p>
+            <p>Starting Salary: ${{job.startingSalary}}</p>
+            <p>Work Type: {{job.workType}}</p>
+        </div>
+        <div class="action-btn">
+            <button *ngIf="showApplyButton && !job.isApplied"
+                (click)="onApply(); $event.stopPropagation()">Apply</button>
+            <button *ngIf="!showApplyButton && job.isApplied" (click)="onCancel(); $event.stopPropagation()">Cancel
+                Application</button>
+        </div>
+    </div>
+
+    <div *ngIf="expanded" class="job-details">
+        <p><strong>Location:</strong> {{job.location}}, {{job.country}}</p>
+        <p><strong>Qualifications:</strong> {{job.qualifications}}</p>
+        <p><strong>Description:</strong> {{job.description}}</p>
+    </div>
+</div> -->
+
+<div class="job-item">
+    <div class="job-summary" (click)="toggleDetails()" tabindex="0" role="button" [attr.aria-pressed]="expanded">
+        <div>
+            <h3>{{ job.position }} - {{ job.company }}</h3>
+            <p>Expires: {{ job.expires | date }}</p>
+            <p>Starting Salary: ${{ job.startingSalary }}</p>
+            <p>Work Type: {{ job.workType }}</p>
+        </div>
+        <div class="action-btn">
+            @if (showApplyButton && !job.isApplied) {
+            <button (click)="onApply(); $event.stopPropagation()">Apply</button>
+            }
+            @if (!showApplyButton && job.isApplied) {
+            <button (click)="onCancel(); $event.stopPropagation()">Cancel Application</button>
+            }
+        </div>
+    </div>
+
+    @if (expanded) {
+    <div class="job-details">
+        <p><strong>Location:</strong> {{ job.location }}, {{ job.country }}</p>
+        <p><strong>Qualifications:</strong> {{ job.qualifications }}</p>
+        <p><strong>Description:</strong> {{ job.description }}</p>
+    </div>
+    }
+</div>

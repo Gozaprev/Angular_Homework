@@ -1,0 +1,8 @@
+<app-sort-panel [jobs]="jobs" (sortedJobs)="onSortedJobs($event)">
+</app-sort-panel>
+
+<div class="available-jobs">
+    <h2>Available Jobs</h2>
+    <app-job-item *ngFor="let job of jobs" [job]="job" [showApplyButton]="true" (apply)="onApply($event)">
+    </app-job-item>
+</div>
