@@ -1,0 +1,26 @@
+<div class="job-card">
+    <h3>{{ job.position }} at {{ job.company }}</h3>
+
+    <button (click)="toggleExpand()">
+        {{ isExpanded() ? 'Hide Details' : 'Show Details' }}
+    </button>
+
+    @if (isExpanded()) {
+    <div class="job-details">
+        <p>{{ job.description }}</p>
+    </div>
+    }
+
+    <!-- <button *ngIf="showApplyButton && !job.isApplied" (click)="onApplyClick()">Apply</button>
+    <button *ngIf="job.isApplied" (click)="onCancelClick()">Cancel Application</button> -->
+
+    @if (showApplyButton && !job.isApplied) {
+    <button (click)="onApplyClick()">Apply</button>
+    }
+    @if (job.isApplied) {
+    <button (click)="onCancelClick()">Cancel Application</button>
+    }
+
+
+
+</div>

@@ -1,0 +1,18 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.panels {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    align-items: flex-start;
+}

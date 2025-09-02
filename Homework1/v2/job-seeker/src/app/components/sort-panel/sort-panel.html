@@ -1,0 +1,12 @@
+<!-- <p>sort-panel works!</p> -->
+
+
+<div class="sort-panel">
+    <label>Sort by:</label>
+    <button (click)="onSortFieldChange('salary')">
+        Starting Salary {{ field() === 'salary' ? (asc() ? '↑' : '↓') : '' }}
+    </button>
+    <button (click)="onSortFieldChange('workType')">
+        Work Type {{ field() === 'workType' ? (asc() ? '↑' : '↓') : '' }}
+    </button>
+</div>
