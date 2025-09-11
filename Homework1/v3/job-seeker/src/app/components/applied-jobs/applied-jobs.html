@@ -1,0 +1,13 @@
+<div class="applied-jobs-list">
+  @if (appliedJobs().length === 0) {
+  <p>No jobs applied to yet.</p>
+  } @else {
+  <ul>
+    @for (job of appliedJobs(); track job) {
+    <li>
+      <app-job-item [job]="job" [showApplyButton]="false" (cancel)="onCancel($event)"></app-job-item>
+    </li>
+    }
+  </ul>
+  }
+</div>

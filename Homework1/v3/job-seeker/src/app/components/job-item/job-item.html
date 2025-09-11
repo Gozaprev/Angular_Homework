@@ -1,0 +1,228 @@
+<!-- 
+ 
+<div class="job-card">
+    <h3>{{ job.position }} at {{ job.company }}</h3>
+
+    <button (click)="toggleExpand()">
+        {{ isExpanded() ? 'Hide Details' : 'Show Details' }}
+    </button>
+
+    @if (isExpanded()) {
+    <div class="job-details">
+        <p>{{ job.description }}</p>
+    </div>
+    }
+
+     <button *ngIf="showApplyButton && !job.isApplied" (click)="onApplyClick()">Apply</button>
+    <button *ngIf="job.isApplied" (click)="onCancelClick()">Cancel Application</button> 
+
+    @if (showApplyButton && !job.isApplied) {
+    <button (click)="onApplyClick()">Apply</button>
+    }
+    @if (job.isApplied) {
+    <button (click)="onCancelClick()">Cancel Application</button>
+    }
+
+
+
+</div> 
+
+-->
+<!-- @if (job() as currentJob) {
+<h3>{{ currentJob.position }} at {{ currentJob.company }}</h3>
+
+<button (click)="toggleExpand()">
+    {{ isExpanded() ? 'Hide Details' : 'Show Details' }}
+</button>
+
+@if (isExpanded()) {
+<div>
+    <p><strong>Description:</strong> {{ currentJob.description }}</p>
+    <p><strong>Location:</strong> {{ currentJob.location }}, {{ currentJob.country }}</p>
+    <p><strong>Qualifications:</strong> {{ currentJob.qualifications }}</p>
+    <p><strong>Work Type:</strong> {{ currentJob.workType }}</p>
+</div>
+}
+
+@if (showApplyButton() && !currentJob.isApplied) {
+<button (click)="onApplyClick()">
+    Apply
+</button>
+}
+
+@if (currentJob.isApplied) {
+<button (click)="onCancelClick()">
+    Cancel Application
+</button>
+}
+} -->
+
+
+<!-- ///////////////////////////////////////////// -->
+
+<!-- @if (job() as currentJob) {
+<h3>{{ currentJob.position }} at {{ currentJob.company }}</h3>
+
+<button (click)="toggleExpand()">
+    {{ isExpanded() ? 'Hide Details' : 'Show Details' }}
+</button>
+
+@if (isExpanded()) {
+<div>
+    <p><strong>Description:</strong> {{ currentJob.description }}</p>
+    <p><strong>Location:</strong> {{ currentJob.location }}, {{ currentJob.country }}</p>
+    <p><strong>Qualifications:</strong> {{ currentJob.qualifications }}</p>
+    <p><strong>Work Type:</strong> {{ currentJob.workType }}</p>
+</div>
+}
+
+@if (showApplyButton() && !currentJob.isApplied) {
+<button (click)="onApplyClick()">
+    Apply
+</button>
+}
+
+@if (currentJob.isApplied) {
+<button (click)="onCancelClick()">
+    Cancel Application
+</button>
+}
+} -->
+
+<!-- ////////////////////////////////////// -->
+
+<!-- <ng-container @if job() as currentJob>
+  <h3>{{ currentJob.position }} at {{ currentJob.company }}</h3>
+
+  <button (click)="toggleExpand()">
+    {{ isExpanded() ? 'Hide Details' : 'Show Details' }}
+  </button>
+
+  <div @if isExpanded()>
+    <p><strong>Description:</strong> {{ currentJob.description }}</p>
+    <p><strong>Location:</strong> {{ currentJob.location }}, {{ currentJob.country }}</p>
+    <p><strong>Qualifications:</strong> {{ currentJob.qualifications }}</p>
+    <p><strong>Work Type:</strong> {{ currentJob.workType }}</p>
+  </div>
+
+  <button @if showApplyButton() && !currentJob.isApplied (click)="onApplyClick()">
+    Apply
+  </button>
+
+  <button @if currentJob.isApplied (click)="onCancelClick()">
+    Cancel Application
+  </button>
+</ng-container> -->
+
+
+
+
+
+
+<!-- @if (job() as currentJob) {
+<h3>{{ currentJob.position }} at {{ currentJob.company }}</h3>
+
+<button (click)="toggleExpand()">
+    {{ isExpanded() ? 'Hide Details' : 'Show Details' }}
+</button>
+
+@if (isExpanded()) {
+<div>
+    <p><strong>Description:</strong> {{ currentJob.description }}</p>
+    <p><strong>Location:</strong> {{ currentJob.location }}, {{ currentJob.country }}</p>
+    <p><strong>Qualifications:</strong> {{ currentJob.qualifications }}</p>
+    <p><strong>Work Type:</strong> {{ currentJob.workType }}</p>
+</div>
+}
+
+@if (showApplyButton() && !currentJob.isApplied) {
+<button (click)="onApplyClick()">
+    Apply
+</button>
+}
+
+@if (currentJob.isApplied) {
+<button (click)="onCancelClick()">
+    Cancel Application
+</button>
+}
+} -->
+
+
+
+<!-- @if (job() as currentJob) {
+<h3>{{ currentJob.position }} at {{ currentJob.company }}</h3>
+
+<button (click)="toggleExpand()">
+    {{ isExpanded() ? 'Hide Details' : 'Show Details' }}
+</button>
+
+@if (isExpanded()) {
+<div>
+    <p><strong>Description:</strong> {{ currentJob.description }}</p>
+    <p><strong>Location:</strong> {{ currentJob.location }}, {{ currentJob.country }}</p>
+    <p><strong>Qualifications:</strong> {{ currentJob.qualifications }}</p>
+    <p><strong>Work Type:</strong> {{ currentJob.workType }}</p>
+</div>
+}
+
+@if (showApplyButton() && !currentJob.isApplied) {
+<button (click)="onApplyClick()">Apply</button>
+}
+
+@if (currentJob.isApplied) {
+<button (click)="onCancelClick()">Cancel Application</button>
+}
+} -->
+
+
+
+
+<ng-container *ngIf="job() as currentJob">
+    <!-- @if (job() as currentJob) { -->
+    <!-- <div> -->
+    <h3>{{ currentJob.position }} at {{ currentJob.company }}</h3>
+
+    <p><strong>Description:</strong> {{ currentJob.description }}</p>
+    <p><strong>Work Type:</strong> {{ currentJob.workType }}</p>
+    <p><strong>Starting salary:</strong> {{ currentJob.startingSalary }}</p>
+
+    <button (click)="toggleExpand()">
+        {{ isExpanded() ? 'Hide Details' : 'Show Details' }}
+    </button>
+
+    @if (isExpanded()) {
+    <div>
+        <p><strong>Location:</strong> {{ currentJob.location }}, {{ currentJob.country }}</p>
+        <p><strong>Qualifications:</strong> {{ currentJob.qualifications }}</p>
+    </div>
+    }
+
+    <!-- <ng-container *ngIf="isExpanded()">
+        <div>
+
+            <p><strong>Location:</strong> {{ currentJob.location }}, {{ currentJob.country }}</p>
+            <p><strong>Qualifications:</strong> {{ currentJob.qualifications }}</p>
+
+        </div>
+    </ng-container> -->
+
+    @if (showApplyButton() && !currentJob.isApplied) {
+    <button (click)="onApplyClick()">Apply</button>
+    }
+
+    @if (currentJob.isApplied) {
+    <button (click)="onCancelClick()">Cancel Application</button>
+    }
+
+    <!-- <ng-container *ngIf="showApplyButton() && !currentJob.isApplied">
+        <button (click)="onApplyClick()">Apply</button>
+    </ng-container>
+
+    <ng-container *ngIf="currentJob.isApplied">
+        <button (click)="onCancelClick()">Cancel Application</button>
+    </ng-container> -->
+
+</ng-container>
+<!-- </div>
+} -->

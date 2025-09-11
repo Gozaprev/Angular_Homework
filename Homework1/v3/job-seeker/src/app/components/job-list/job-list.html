@@ -1,0 +1,47 @@
+<!-- <div class="totals">
+    <p>Available Jobs: {{ availableJobsCount() }}</p>
+    <p>Applied Jobs: {{ appliedJobsCount() }}</p>
+</div>
+
+<div class="search-bar">
+    <input type="text" placeholder="Search jobs by company or position"
+        (input)="onSearchChange($any($event.target).value)" />
+</div>
+
+<app-sort-panel [field]="sortField()" [asc]="sortAsc()" (sortCriteriaChange)="onSortChange($event)"></app-sort-panel>
+
+<ul>
+    @for (job of jobs(); track job.position) {
+    <li>
+        <app-job-item [job]="job" [showApplyButton]="true" (apply)="onApply(job)">
+        </app-job-item>
+    </li>
+    }
+    @empty {
+    <li>No jobs found matching your criteria.</li>
+    }
+</ul> -->
+
+<div class="totals">
+    <p>Available Jobs: {{ jobService.availableJobs().length }}</p>
+    <p>Applied Jobs: {{ jobService.appliedJobs().length }}</p>
+</div>
+
+<div class="search-bar">
+    <input type="text" placeholder="Search jobs by company or position" [value]="searchText()"
+        (input)="onSearchChange($any($event.target).value)" />
+</div>
+
+<app-sort-panel [field]="sortField()" [asc]="sortAsc()" (sortCriteriaChange)="onSortChange($event)"></app-sort-panel>
+
+<ul>
+    @for (job of filteredAndSortedJobs(); track job.position) {
+    <li>
+        <app-job-item [job]="job" [showApplyButton]="true" (apply)="onApply(job)" (cancel)="onCancel(job)">
+        </app-job-item>
+    </li>
+    }
+    @empty {
+    <li>No jobs found matching your criteria.</li>
+    }
+</ul>
